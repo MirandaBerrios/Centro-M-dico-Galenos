@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block tittle %} Perfil {% endblock%}
+
+{% block body %}
+{% for user in paciente %}
+
+<div style="margin-bottom:5em; margin-top: 5em;border: none;" class="row justify-content-center">
+    <div  class="card" style="width: 50rem;border:none;">
+    <div class="card-body">
+      <h2 class="card-title"> Ficha usuario</h2>
+      <br>
+      <ul style="font-size: large; font-weight: 400;" class="list-group ">
+        <li class="lista_datos list-group-item"><p>Nombres :  {{ user.primer_nombre }}   {{ user.segundo_nombre }}</p></li>      
+        <li class="lista_datos list-group-item"><p>Apellidos :  {{ user.apellido_paterno }}   {{ apellido_materno }}</p> </li>
+        <li class="lista_datos list-group-item"><p>Fecha nacimiento :  {{ user.fecha_nacimiento }} </p> </li>
+        <li class="lista_datos list-group-item"><p>Dirección :  {{ user.direccion }} </p></li>
+        <li class="lista_datos list-group-item"><p>Email :  {{ user.email }} </p></li>
+        <li class="lista_datos list-group-item"><p>Fecha nacimiento :  {{ user.fecha_nacimiento }} </li>
+      </ul>
+    </div>
+    <div style="display: flex; margin-right: auto; margin-left: auto; width: max-content;">
+    <button  class="btn btn-info">Updatear</button>
+    <button class="btn btn-danger">Eliminar cuenta</button>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

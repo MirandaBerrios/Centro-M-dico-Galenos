@@ -1,6 +1,239 @@
-{% extends 'base.html' %}
-{% block body %}
- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, 
- explicabo quia error eius eos architecto id! Corporis numquam sunt optio quod, fugiat tempore modi, quis harum pariatur quo aliquam. Maxime.
-{% endblock %}
+{% extends 'base.html' %} {% block title %} home {% endblock %} {% block body %}
 
+<!--carrousel inicio-->
+<div class="container">
+  <div class="row-carousel">
+    <div class="col-sm-12">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../static/core/img/centroMedico.png"
+              class="d-block w-100"
+              alt="..."
+              width="400px"
+              height="400px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/core/img/centroMedico.png"
+              class="d-block w-100"
+              alt="..."
+              width="400px"
+              height="400px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/core/img/centroMedico.png"
+              class="d-block w-100"
+              alt="..."
+              width="400px"
+              height="400px"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--carrousel fin -->
+
+<!-- src="../static/core/img/centroMedico.png" -->
+<!-- INICIO TARJETA-->
+<div class="container_habitacion col-lg-4 col-sm-12 col-md-6">
+  <div style="display:flex; margin-right:auto; margin-left:auto;" class="campos_tarjeta cont_imagen">
+    <img  class="imagen" src="../static/core/img/centroMedico.png" alt="" />
+  </div>
+  <div class="campos_tarjeta titulo">
+  </div>
+  <div class="campos_tarjeta nombremedico">
+    Nombre: Miguel Jose Carreño Soto
+  </div>
+  <div class="campos_tarjeta servicios">Especilidad: Cardio cirujano</div>
+  <div class="campos_tarjeta estadia">Precio por cita: $ 20.000</div>
+  <div class="campos_tarjeta piso">oficina del medico: Piso numero 2</div>
+
+  <div class="campos_tarjeta reservar">
+    <button class="button_reserva">reservar</button>
+  </div>
+</div>
+<div class="container_habitacion col-lg-4 col-sm-12 col-md-6">
+    <div style="display:flex; margin-right:auto; margin-left:auto;" class="campos_tarjeta cont_imagen">
+      <img  class="imagen" src="../static/core/img/centroMedico.png" alt="" />
+    </div>
+    <div class="campos_tarjeta titulo">
+    </div>
+    <div class="campos_tarjeta nombremedico">
+      Nombre: Miguel Jose Carreño Soto
+    </div>
+    <div class="campos_tarjeta servicios">Especilidad: Cardio cirujano</div>
+    <div class="campos_tarjeta estadia">Precio por cita: $ 20.000</div>
+    <div class="campos_tarjeta piso">oficina del medico: Piso numero 2</div>
+  
+    <div class="campos_tarjeta reservar">
+      <button class="button_reserva">reservar</button>
+    </div>
+  </div>
+  <div class="container_habitacion col-lg-4 col-sm-12 col-md-6">
+    <div style="display:flex; margin-right:auto; margin-left:auto;" class="campos_tarjeta cont_imagen">
+      <img  class="imagen" src="../static/core/img/centroMedico.png" alt="" />
+    </div>
+    <div class="campos_tarjeta titulo">
+    </div>
+    <div class="campos_tarjeta nombremedico">
+      Nombre: Miguel Jose Carreño Soto
+    </div>
+    <div class="campos_tarjeta servicios">Especilidad: Cardio cirujano</div>
+    <div class="campos_tarjeta estadia">Precio por cita: $ 20.000</div>
+    <div class="campos_tarjeta piso">oficina del medico: Piso numero 2</div>
+  
+    <div class="campos_tarjeta reservar">
+      <button class="button_reserva">reservar</button>
+    </div>
+  </div>
+<!-- FIN TARJETA -->
+
+<!--servicios-->
+<div class="container col-md-12 col-lg-12 col-sm-12 col-xs-12 pt-5">
+  <h1>Servicios hoteles veranum</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- ENCABEZADOS VACÍOS -->
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row">Exteriores</th>
+        <td>Terraza</td>
+      </tr>
+      <tr>
+        <th scope="row">Piscina y bienestar</th>
+        <td>
+          Piscina, Piscina interior (todo el año), Piscina al aire libre,
+          Piscina interior, Bañera de hidromasaje / jacuzzi, Masajes, Spa y
+          centro de bienestar, Gimnasio, Sauna
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Mascotas</th>
+        <td>No se admiten.</td>
+      </tr>
+      <tr>
+        <th scope="row">Actividades</th>
+        <td>
+          Club infantil, Alquiler de bicicletas (de pago), Campo de golf (a
+          menos de 3 km)
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Comida & bebida</th>
+        <td>Desayuno en la habitación, Bar, Restaurante, ¡Muy buen café!</td>
+      </tr>
+      <tr>
+        <th scope="row">Internet</th>
+
+        <td>
+          ¡Gratis! Hay conexión a internet Wi-Fi disponible en todo el
+          establecimiento. Gratis.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Aparcamiento</th>
+        <td>
+          Hay parking privado en el establecimiento. No es necesario reservar.
+          Precio: 12 USD por día .
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Servicios de recepción</th>
+        <td>
+          Cajero automático en el hotel, Guardaequipaje, Información turística,
+          Cambio de moneda, Recepción 24 horas
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Servicios de limpieza</th>
+        <td>
+          Limpiabotas, Servicio de planchado, Servicio de limpieza en seco,
+          Servicio de lavandería
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Activities</th>
+        <td>
+          Mini Golf, Snorkeling, Diving, Cycling, Hiking, Bicycle Rental
+          (additional charge), Windsurfing, Pool Table, Fishing
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">General</th>
+        <td>
+          Aire acondicionado, Tiendas (en el establecimiento), Calefacción,
+          Alquiler de coches, Tienda de recuerdos, Caja fuerte, Ascensor, Suite
+          nupcial, Peluquería / salón de belleza, Adaptado personas de movilidad
+          reducida, Servicio de habitaciones
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Política de humo</th>
+        <td>Habitaciones no fumadores</td>
+      </tr>
+      <tr>
+        <th scope="row">Idiomas que se hablan</th>
+        <td>español, inglés</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+</div>
+
+{% endblock %}

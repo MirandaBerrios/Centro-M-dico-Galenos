@@ -3,126 +3,394 @@
 {% block title %}Reserva tu hora{% endblock %}
 
 {% block body %}
-<div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Doctor Simi
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Doctor Simi
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Accordion Item #2
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Accordion Item #3
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    </div>
-                            <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Boton hermoso
-                    </button>
-                    
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Doctor Simi</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            lunes 8:00
-                            lunes 8:20
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Guardar Hora</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+<div class="col-7 row " style="display: flex ; margin-right: auto ; margin-left: auto ; margin-top: 5em">
+  <div class="text-center"style="border: solid 1px black">
+    Doctores 
+  </div>
+</div>
+
+<div class="accordion col-7" id="accordionExample" style="margin-right: auto ; margin-left: auto ; margin-bottom: 15em ">
+<!--=========================================================================================================================================================================================================================================-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Dr.Densil Vera 
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+<!--===========BODY============================-->
+<div class="accordion" id="accordionDensil">
+  <!--uwuwuwuwuwuwuwuwuwu-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingLunes1">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLunes1" aria-expanded="true" aria-controls="collapseLunes1">
+        Lunes
+      </button>
+    </h2>
+    <div id="collapseLunes1" class="accordion-collapse collapse show" aria-labelledby="headingLunes1" data-bs-parent="#accordionDensil">
+      <div class="accordion-body">
+        <!--Boton modal-->
                 <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Boton hermoso
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLunes1">
+          Reservar hora
         </button>
-        
+
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade" id="exampleModalLunes1" tabindex="-1" aria-labelledby="exampleModalLabelLunes1" aria-hidden="true">
+          <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Doctor Simi</h5>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelLunes1">Reserva de hora</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                lunes 8:00
-                lunes 8:20
-                </div>
-                <div class="modal-footer">
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar Hora</button>
-                </div>
+                <button type="button" class="btn btn-primary">Reservar</button>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+        <!--===========-->
       </div>
     </div>
+  </div>
+  <!--uwuwuwuwuwuwuwuwuwuwu-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingMiercoles1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMiercoles1" aria-expanded="True" aria-controls="collapseMiercoles1">
+        Miercoles
+      </button>
+    </h2>
+    <div id="collapseMiercoles1" class="accordion-collapse collapse show" aria-labelledby="headingMiercoles1" data-bs-parent="#accordionDensil">
+      <div class="accordion-body">
+        <!--Boton modal-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMiercoles1">
+          Reservar hora
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalMiercoles1" tabindex="-1" aria-labelledby="exampleModalLabelMiercoles1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelMiercoles1">Reserva de hora</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Reservar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--===========-->
+      </div>
+    </div>
+  </div>
+  <!--uwuwuwuwuwuwuwuwuwuwu-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingViernes1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViernes1" aria-expanded="false" aria-controls="collapseViernes1">
+        Viernes
+      </button>
+    </h2>
+    <div id="collapseViernes1" class="accordion-collapse collapse show" aria-labelledby="headingViernes1" data-bs-parent="#accordionDensil">
+      <div class="accordion-body">
+        <!--Boton modal-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalViernes1">
+          Reservar hora
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalViernes1" tabindex="-1" aria-labelledby="exampleModalLabelViernes1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelViernes1">Reserva de hora</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Reservar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=========-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--===========================================-->
+      </div>
+    </div>
+  </div>
+<!--=========================================================================================================================================================================================================================================-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Dr.Rodrígo Alfaro
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+<!--=====================BODY===================================-->
+        <div class="accordion" id="accordionRodrigo">
+          <!--uwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingLunes2">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLunes2" aria-expanded="true" aria-controls="collapseLunes2">
+                Lunes
+              </button>
+            </h2>
+            <div id="collapseLunes2" class="accordion-collapse collapse show" aria-labelledby="headingLunes2" data-bs-parent="#accordionRodrigo">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLunes2">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalLunes2" tabindex="-1" aria-labelledby="exampleModalLabelLunes2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLunes2">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+          <!--uwuwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMiercoles2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMiercoles2" aria-expanded="True" aria-controls="collapseMiercoles2">
+                Miercoles
+              </button>
+            </h2>
+            <div id="collapseMiercoles2" class="accordion-collapse collapse show" aria-labelledby="headingMiercoles2" data-bs-parent="#accordionRodrigo">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMiercoles2">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalMiercoles2" tabindex="-1" aria-labelledby="exampleModalLabelMiercoles2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelMiercoles2">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+          <!--uwuwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingViernes2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViernes2" aria-expanded="false" aria-controls="collapseViernes2">
+                Viernes
+              </button>
+            </h2>
+            <div id="collapseViernes2" class="accordion-collapse collapse show" aria-labelledby="headingViernes2" data-bs-parent="#accordionRodrigo">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalViernes2">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalViernes2" tabindex="-1" aria-labelledby="exampleModalLabelViernes2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelViernes2">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+        </div>
+<!--============================================================-->
+      </div>
+    </div>
+  </div>
+<!--=========================================================================================================================================================================================================================================-->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Dr.Martín Alvarado 
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+<!--=====================BODY================================-->        
+        <div class="accordion" id="accordionMartin">
+          <!--uwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingLunes3">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLunes3" aria-expanded="true" aria-controls="collapseLunes3">
+                Lunes
+              </button>
+            </h2>
+            <div id="collapseLunes3" class="accordion-collapse collapse show" aria-labelledby="headingLunes3" data-bs-parent="#accordionMartin">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLunes3">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalLunes3" tabindex="-1" aria-labelledby="exampleModalLabelLunes3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLunes3">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+          <!--uwuwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMiercoles3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMiercoles3" aria-expanded="True" aria-controls="collapseMiercoles3">
+                Miercoles
+              </button>
+            </h2>
+            <div id="collapseMiercoles3" class="accordion-collapse collapse show" aria-labelledby="headingMiercoles3" data-bs-parent="#accordionMartin">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMiercoles3">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalMiercoles3" tabindex="-1" aria-labelledby="exampleModalLabelMiercoles3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelMiercoles3">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+          <!--uwuwuwuwuwuwuwuwuwuwu-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingViernes3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViernes3" aria-expanded="false" aria-controls="collapseViernes3">
+                Viernes
+              </button>
+            </h2>
+            <div id="collapseViernes3" class="accordion-collapse collapse show" aria-labelledby="headingViernes3" data-bs-parent="#accordionMartin">
+              <div class="accordion-body">
+                <!--Boton modal-->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalViernes3">
+                  Reservar hora
+                </button>
+        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalViernes3" tabindex="-1" aria-labelledby="exampleModalLabelViernes3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelVierne3">Reserva de hora</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=========-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--======================BODY=======================================================-->
+      </div>
+    </div>
+  </div>
+  <!--=========================================================================================================================================================================================================================================-->
 </div>
 {% endblock %}

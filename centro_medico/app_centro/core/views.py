@@ -21,6 +21,13 @@ def nav(request):
 def footer (request):
     return render (request, "footer.html")
 
+def perfil (request):
+    rut_paciente = "8742659-6"
+    user = Paciente.objects.all().filter(rut_paciente = rut_paciente)
+    data = {"paciente": user}
+    print(f"{data} algo" )
+    return render (request, "perfil.html" , data)
+
 def validar(user , pas):
     usuario = "no"
     try: 
@@ -72,3 +79,6 @@ def registrar(request):
             # redirigir al home
             return redirect(to="")
     return render(request , 'registrar.html', data)      
+
+def contacto(request):
+    return render(request, "contacto.html")
