@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- importaciones css -->
+    <link rel="stylesheet" href="../static/core/style/styleBase.css">
+     
+    <!-- importaciones de bootstrap -->
+    <link rel="stylesheet" href="../../core/static/core/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../core/static/core/bootstrap/css/bootstrap.min.css.map"/>
+
+    <script src="../../core/static/core/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>{% block tittle %}centro medico galenos{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    {% include 'nav.html' %}
+</header>
+
+{% block body %}
+{% endblock %}
+{% include 'footer.html' %}
+</body>
+<script src="../static/core/js/animationNav.js" >  </script>
+</html>

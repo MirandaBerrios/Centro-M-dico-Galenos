@@ -1,17 +1,41 @@
-{% extends '' %}
+
 {% block nav %}
 <html>
-<head>
-    <link rel="stylesheet" href="../../core/static/core/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../core/static/core/bootstrap/css/bootstrap.min.css.map"/>
-</head>
-
-<body>
-    
-    <nav class="navbar-expand-md fixed-top"> chao chao</nav>
-    <h2>asldkj</h2>
-    
-</body>
-
-</html>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a style="margin-left: 150px; display: flex;" class="navbar-brand" href="{% url 'home' %}">
+          <h3 style="vertical-align: bottom;">Centro médico galenos </h3></a>
+          <img style="height: 55px; margin-right: 100px" src="../static/core/img/centroMedico.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><p>Inicio</p></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><p>Procedimientos</p></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><p>Exámenes</p></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><p>Planes y Convenios</p></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><p>Contáctanos</p></a>
+            </li>
+          </ul>
+          <ul style="margin-left: auto; margin-right: 20px; display: flex;">
+            <li style="list-style: none; margin-right: 40px;"> 
+              <a id="reserva_hora" style="text-decoration: none;" href="{% url 'reserva' %}">
+                <img id="calendar" src="../static/core/img/calendar.png" alt="">
+                Reserva tu hora</a>
+            </li>
+            <li style="list-style: none;" class="nav-item"><a id="iniciar_sesion" style="text-decoration: none;" href="{% url 'login' %}"> Iniciar sesion</a></li>
+          </ul>
+        </div>
+      </nav>
+      </html>
 {% endblock %}

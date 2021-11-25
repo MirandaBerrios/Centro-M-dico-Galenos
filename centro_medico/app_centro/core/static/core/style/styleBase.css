@@ -1,0 +1,53 @@
+
+.img_footer{
+    height: 50px;
+}
+
+#logo{
+    width: 80px;
+    background-color: black;
+}
+
+#iniciar_sesion{
+    color: white;
+    font: bold;
+    border: solid 1px  gray;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(3, 148, 227);
+}
+
+#reserva_hora{
+    color: white;
+    background-color:rgb(255, 119, 28);
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+nav p {
+    font-weight: bold;
+    font-size: large;
+    padding: 1em;
+    
+}
+
+nav p:hover{
+    background-color: rgb(3, 148, 227);
+    transition-duration: 0.5s;
+    color: white;
+    font-size: large;
+    border-radius:5px ;
+    
+    
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+#calendar{
+    height: 20px;
+    width: 20px;
+}
