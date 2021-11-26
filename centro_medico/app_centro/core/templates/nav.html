@@ -33,7 +33,11 @@
                 <img id="calendar" src="../static/core/img/calendar.png" alt="">
                 Reserva tu hora</a>
             </li>
+            {% if flag == True %}
+            <li style="list-style: none;" class="nav-item"><a id="iniciar_sesion" style="text-decoration: none;" href="{% url 'perfil' %}"> Perfil</a></li>
+            {% else %}
             <li style="list-style: none;" class="nav-item"><a id="iniciar_sesion" style="text-decoration: none;" href="{% url 'login' %}"> Iniciar sesion</a></li>
+            {% endif %} 
           </ul>
         </div>
       </nav>

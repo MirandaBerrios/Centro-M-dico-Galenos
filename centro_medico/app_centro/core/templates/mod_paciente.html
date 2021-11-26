@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block tittle %} Modificar paciente {% endblock %}
+{% include 'nav.html' %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div style="margin-bottom:5em; margin-top: 5em;border: none;" class="row justify-content-center">
+        <div class= "col-4">
+        <form method="POST">
+        {% csrf_token %} 
+        {{ form | crispy }}
+    <button style="margin: 1em" class="btn btn-success " type="submit">
+        Actualizar datos
+    </button>
+    
+    </form>
+    </div>
+    </div>
+{% endblock %} 

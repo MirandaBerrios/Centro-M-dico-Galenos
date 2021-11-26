@@ -5,28 +5,34 @@ from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-# Create your views here.
-def base(request):
-    return render (request , "base.html")
+def show_perfil(request):
+    flag = False
+    try: 
+        aux = request.COOKIES.get('rut_paciente')
+        print(aux)
+        if len(aux)> 0:
+            flag = True
+            return flag
+        else: 
+            flag = False
+            return flag   
+    except: 
+        return flag
 
 def home(request):
-    return render (request , "home.html")
+    data = {"flag": show_perfil(request)}
+    return render(request, "home.html" , data)
+        
 
 def reserva(request):
     return render (request , "reserva.html")
 
-def nav(request):
-    return render (request, "nav.html")
-    
-def footer (request):
-    return render (request, "footer.html")
-
-def perfil (request):
-    rut_paciente = "8742659-6"
+def perfil (request ):
+    rut_paciente = request.COOKIES.get('rut_paciente')
+    print(rut_paciente)
     user = Paciente.objects.all().filter(rut_paciente = rut_paciente)
-    data = {"paciente": user}
-    print(f"{data} algo" )
-    return render (request, "perfil.html" , data)
+    data = {"paciente": user , "flag": show_perfil(request)}
+    return render(request, "perfil.html" , data )
 
 def validar(user , pas):
     usuario = "no"
@@ -37,9 +43,29 @@ def validar(user , pas):
          return False   
 
     return True   
-           
 
-def login(request):
+def mod_paciente(request , action , rut):
+    data = {"message": "" , "form": PacienteForm , "action" : action , "rut_paciente": rut }
+    if action == 'upd':
+        object = Paciente.objects.get(rut_paciente = rut)
+        if request.method == "POST":
+            form = PacienteForm(data = request.POST , files = request.FILES , instance = object)
+            if form.is_valid():
+                form.save()
+                messages.success(request , "¡El usuario ha sido actualizado!")
+                return redirect(to = "perfil")
+        data["form"] = PacienteForm(instance= object)  
+    elif action == 'del':
+        try:
+            Paciente.objects.get(rut_paciente=rut).delete()
+            messages.error(request, "¡Usuario eliminado correctamente!")
+            return redirect(to="home")
+        except:
+            messages.error(request,"¡El usuario ya estaba eliminado!")
+            return render(request,"home.html")  
+    return render(request , "mod_paciente.html" , data )            
+
+def login(request ):
     data = {"mesg": "", "form": IniciarSesionForm()}
     if request.method == "POST":
         form = IniciarSesionForm(request.POST)
@@ -49,14 +75,9 @@ def login(request):
             isValidate = validar(rut_paciente , contrasena )         
             print(isValidate)
             if isValidate is True:
-                return redirect(to = 'home')
-                # if user.is_active:
-                #     login(request, user)
-                #     return redirect(to="")
-                # else:
-                #     data["mesg"] = "¡La cuenta o la password no son correctos!"
-                #     print(data)
-                #     print("1         uno")
+                obj = redirect(to = 'home')
+                obj.set_cookie('rut_paciente',rut_paciente)
+                return obj
             else:
                 data["mesg"] = "¡La cuenta o la password no son correctos!"
                 print(data)
@@ -80,5 +101,12 @@ def registrar(request):
             return redirect(to="")
     return render(request , 'registrar.html', data)      
 
+
+
 def contacto(request):
     return render(request, "contacto.html")
+
+def cerrar_sesion(request): 
+    obj = redirect(to= 'home')
+    obj.delete_cookie('rut_paciente')
+    return obj   

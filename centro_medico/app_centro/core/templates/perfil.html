@@ -6,9 +6,12 @@
 {% for user in paciente %}
 
 <div style="margin-bottom:5em; margin-top: 5em;border: none;" class="row justify-content-center">
-    <div  class="card" style="width: 50rem;border:none;">
+  <div  class="card" style="width: 50rem;border:none;">
+    <div class="col-7 " display="flex" style="float: left">
+    <h2> Ficha usuario</h2>
+  </div>
+  <a class="btn btn-danger col-2"  style="margin-left : 630px" href="{% url 'cerrar_sesion' %}">Log out</a>
     <div class="card-body">
-      <h2 class="card-title"> Ficha usuario</h2>
       <br>
       <ul style="font-size: large; font-weight: 400;" class="list-group ">
         <li class="lista_datos list-group-item"><p>Nombres :  {{ user.primer_nombre }}   {{ user.segundo_nombre }}</p></li>      
@@ -20,8 +23,9 @@
       </ul>
     </div>
     <div style="display: flex; margin-right: auto; margin-left: auto; width: max-content;">
-    <button  class="btn btn-info">Updatear</button>
-    <button class="btn btn-danger">Eliminar cuenta</button>
+    <a  class="btn btn-info" href ="{% url 'mod_paciente' 'upd' user.rut_paciente %}">Updatear</a>
+    <a  class="btn btn-danger" href ="{% url 'mod_paciente' 'del' user.rut_paciente %}">Eliminar</a>
+   
     </div>
   </div>
 </div>
