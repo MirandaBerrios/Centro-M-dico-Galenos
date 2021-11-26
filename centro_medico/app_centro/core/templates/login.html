@@ -13,7 +13,7 @@
                     <hr>
                     <form action="" method="post">
                         {% csrf_token %}
-                        {{ form|crispy }}
+                        {{ form | crispy }}
                         <a href="{% url 'home' %}">Home</a> |
                         <a href="{% url 'registrar' %}">Registrate</a> 
                             <br><br>
@@ -26,4 +26,16 @@
     <br><br>
 </div>
 </body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for m in messages %}
+  <script>
+  Swal.fire({
+      "title":"¡¡Felicitaciones!!",
+      "text":"{{m}}",
+      "icon":"success"
+  })
+  </script>
+  {% endfor %}
+  {% endif %} 
     {% endblock %}

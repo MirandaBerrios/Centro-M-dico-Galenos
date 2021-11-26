@@ -6,6 +6,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 def show_perfil(request):
+    #Con esta funcion creamos una bandera que nos retornará False si no hay 
+    #datos en las cookies y true si tenemos valores en las cookies
+    #la función la inyectaremos en cada una de las view, para agregarlos al 
+    # diccionario data , con el fin de mostrar el botón perfil cargado en templates/nav
     flag = False
     try: 
         aux = request.COOKIES.get('rut_paciente')
@@ -28,6 +32,8 @@ def reserva(request):
     return render (request , "reserva.html")
 
 def perfil (request ):
+    #Obtendremos el cookie del nav, para renderizar toda la info que está en la 
+    # base de datos mediantes el object.all
     rut_paciente = request.COOKIES.get('rut_paciente')
     print(rut_paciente)
     user = Paciente.objects.all().filter(rut_paciente = rut_paciente)
@@ -35,6 +41,10 @@ def perfil (request ):
     return render(request, "perfil.html" , data )
 
 def validar(user , pas):
+    #Intentamos obtener una registro de la base de datos que cumpla la condición que 
+    #el rut_paciente y la contrasena coincidan, en caso contrasrio usuario no tendrá
+    #valor y arrojará error, por eso está encapsulado en un try catch
+
     usuario = "no"
     try: 
         usuario = Paciente.objects.get(rut_paciente = user , contrasena = pas)
@@ -45,6 +55,8 @@ def validar(user , pas):
     return True   
 
 def mod_paciente(request , action , rut):
+    #modificar  paciente , creamos un diccionario con los datos ingresados
+    # action gatillará la seción update en caso de que se reciba dicho parámetro
     data = {"message": "" , "form": PacienteForm , "action" : action , "rut_paciente": rut }
     if action == 'upd':
         object = Paciente.objects.get(rut_paciente = rut)
@@ -66,7 +78,7 @@ def mod_paciente(request , action , rut):
     return render(request , "mod_paciente.html" , data )            
 
 def login(request ):
-    data = {"mesg": "", "form": IniciarSesionForm()}
+    data = {"messages": "", "form": IniciarSesionForm()}
     if request.method == "POST":
         form = IniciarSesionForm(request.POST)
         if form.is_valid:
@@ -77,28 +89,25 @@ def login(request ):
             if isValidate is True:
                 obj = redirect(to = 'home')
                 obj.set_cookie('rut_paciente',rut_paciente)
+                data["messages"] = "¡La cuenta o la password no son correctos!"
                 return obj
             else:
-                data["mesg"] = "¡La cuenta o la password no son correctos!"
+                data["messages"] = "¡La cuenta o la password no son correctos!"
                 print(data)
                 print("2         dos")
     return render(request, "login.html", data)
 
 
 def registrar(request):
-    data = {'form': PacienteForm}
+    data = {'form': PacienteForm , 'messages': "" }
     if request.method == 'POST':
         formulario = PacienteForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            # implementar las sweet alert
-            # messages.success(request, "Te has registrado correctamente")
-            # guardar la darta que hará login
-            user = authenticate(username=formulario.cleaned_data["rut_paciente"], password=formulario.cleaned_data["contrasena"])
-            # pasar los parámetros que harán login
-            login(request, user)
-            # redirigir al home
-            return redirect(to="")
+            messages.success(request , "Te haz registrado exitosamente")
+            return redirect(to="login")
+        else: 
+            messages.warning(request, 'Credenciales inválidas')
     return render(request , 'registrar.html', data)      
 
 
@@ -109,4 +118,5 @@ def contacto(request):
 def cerrar_sesion(request): 
     obj = redirect(to= 'home')
     obj.delete_cookie('rut_paciente')
-    return obj   
+    data = {"messages":"Te haz desconectado de tu sesión"}
+    return obj

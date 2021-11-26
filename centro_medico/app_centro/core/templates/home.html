@@ -235,4 +235,17 @@
   <br />
 </div>
 
+{% comment %} sweet alert {% endcomment %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if data.messages %}
+  {% for m in messages %}
+  <script>
+  Swal.fire({
+      "title":"¡¡Felicitaciones!!",
+      "text":"{{m}}",
+      "icon":"success"
+  })
+  </script>
+  {% endfor %}
+  {% endif %} 
 {% endblock %}
