@@ -2,6 +2,18 @@
 {% load crispy_forms_tags %}
 
 {% block body%}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for m in messages %}
+  <script>
+  Swal.fire({
+      "title":"Error",
+      "text":"vuelva a intentarlo",
+      "icon":"error"
+  })
+  </script>
+  {% endfor %}
+  {% endif %} 
 <body>   
     <div class="container">
     <br><br><br><br><br>
@@ -26,16 +38,4 @@
     <br><br>
 </div>
 </body>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  {% if messages %}
-  {% for m in messages %}
-  <script>
-  Swal.fire({
-      "title":"¡¡Felicitaciones!!",
-      "text":"{{m}}",
-      "icon":"success"
-  })
-  </script>
-  {% endfor %}
-  {% endif %} 
     {% endblock %}

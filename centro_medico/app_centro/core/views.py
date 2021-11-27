@@ -66,12 +66,15 @@ def mod_paciente(request , action , rut):
                 form.save()
                 messages.success(request , "¡El usuario ha sido actualizado!")
                 return redirect(to = "perfil")
+                
         data["form"] = PacienteForm(instance= object)  
     elif action == 'del':
         try:
             Paciente.objects.get(rut_paciente=rut).delete()
+            obj = redirect(to= 'home')
+            obj.delete_cookie('rut_paciente')
             messages.error(request, "¡Usuario eliminado correctamente!")
-            return redirect(to="home")
+            return obj
         except:
             messages.error(request,"¡El usuario ya estaba eliminado!")
             return render(request,"home.html")  
@@ -93,8 +96,8 @@ def login(request ):
                 return obj
             else:
                 data["messages"] = "¡La cuenta o la password no son correctos!"
-                print(data)
-                print("2         dos")
+                messages.error(request, "dios es grande")
+             
     return render(request, "login.html", data)
 
 
